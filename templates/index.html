@@ -68,7 +68,11 @@
           <div class="flex-fill" style="margin-right: 30px;">
             <div class="card blog__slide text-center">
               <div class="blog__slide__img">
-                <img class="card-img rounded-0" src="{{ post.image_url }}" alt="">
+                {% if post.image_url %}
+                <img class="card-img rounded-0" src={{post.image_url}} alt="">
+                {% else %}
+                <img class="img-fluid" src="{% static 'img/banner_img/blog.png' %}" alt="">
+                {% endif %}
               </div>
               <div class="blog__slide__content">
                 <h3><a href="#">{{ post.title }}</a></h3>
@@ -94,8 +98,12 @@
             {% for post in fresh_posts %}
               <div class="single-recent-blog-post">
                 <div class="thumb">
-                  <img class="img-fluid" src="{{ post.image_url }}" alt="">
-                  <ul class="thumb-info" style="max-width: 550px;"></ul>>
+                  {% if post.image_url %}
+                    <img class="img-fluid" src="{{ post.image_url }}" alt="post-img">
+                  {% else %}
+                    <img class="img-fluid" src="{% static 'img/banner/blog.png' %}" alt="post-img">
+                  {% endif %}
+                  <ul class="thumb-info" style="max-width: 550px;"></ul>
                     <li><a href="#"><i class="ti-user"></i>{{ post.author }}</a></li>
                     <li><a href="#"><i class="ti-notepad"></i>{{ post.published_at }}</a></li>
                     <li><a href="#"><i class="ti-themify-favicon"></i>{{ post.comments_amount }} Comments</a></li>
