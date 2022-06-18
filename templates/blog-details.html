@@ -5,6 +5,19 @@
 
 {% block content %}
 
+<!--================Hero Banner start =================-->
+<section class="mb-30px">
+  <div class="container">
+    <div class="hero-banner">
+      <div class="hero-banner__content">
+        <h1>Blog details</h1>
+        <h4><a style="color:#FFFFFF;" href="{% url 'index' %}">Home</a> - Blog details</h4>
+      </div>
+    </div>
+  </div>
+</section>
+<!--================Hero Banner end =================-->
+
 <!--================ Start Blog Post Area =================-->
 <section class="blog-post-area section-margin">
   <div class="container">
@@ -29,8 +42,7 @@
           </div>
           <p>{{ post.text }}</p>
           <div class="news_d_footer flex-column flex-sm-row">
-            <a href="#"><span class="align-middle mr-2"><i class="ti-heart" style="color:red;"></i></span>{{
-              post.likes_amount }} people like this</a>
+            <a href="#"><span class="align-middle mr-2"><i class="ti-heart" style="color:red;"></i></span>{{post.likes_amount}} people like this</a>
             <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i
                   class="ti-themify-favicon"></i></span>{{post.comments|length}} Comments</a>
             <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
